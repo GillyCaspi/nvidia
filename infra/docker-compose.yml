@@ -1,0 +1,32 @@
+version: "3"
+services:
+  db:
+    image: mongo:latest
+    container_name: mongodb_container
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data`
+  server:
+    image: gillycaspi/nvidia-server
+    build:
+      context: ../server
+      dockerfile: Dockerfile
+    container_name: server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../server/src:/app/src
+    depends_on:
+      - db
+
+#  client:
+#    image: gillycaspi/nvidia-client
+#    build:
+#      context: ../client
+#      dockerfile: Dockerfile
+#    container_name: client
+#    ports:
+#      - "3000:3000"
+#    volumes:
+#      - ../client/src:/app/src
