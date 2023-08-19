@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {getRecords, createCsvFile} from "./mnf_data";
+import {getRecords, createCsvFile} from "./dbService";
 import * as path from "path";
 
 export default function getRouter(): Router {

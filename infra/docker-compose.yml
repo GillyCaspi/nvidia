@@ -20,13 +20,3 @@ services:
     depends_on:
       - db
 
-#  client:
-#    image: gillycaspi/nvidia-client
-#    build:
-#      context: ../client
-#      dockerfile: Dockerfile
-#    container_name: client
-#    ports:
-#      - "3000:3000"
-#    volumes:
-#      - ../client/src:/app/src
