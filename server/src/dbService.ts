@@ -18,7 +18,6 @@ export async function createCsvFile(queryString: any): Promise<any> {
 }
 
 const createFilters = (queryString: any) => {
-    console.log(queryString);
     let filters = {};
     if (queryString.pn) {
         filters = {PN: queryString.pn}
@@ -36,6 +35,5 @@ const createFilters = (queryString: any) => {
         }
         filters = {...filters, TEST_DATE: {...dateFilter}};
     }
-    console.log(filters);
     return filters;
 }

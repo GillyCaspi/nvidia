@@ -13,7 +13,6 @@ export default function getRouter(): Router {
 
     router.get('/csv',  async (req, res) => {
         await createCsvFile(req.query);
-        console.log(path.resolve('./data.csv'));
         res.download(path.resolve('./data.csv'));
     });
 
