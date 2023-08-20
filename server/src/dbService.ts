@@ -36,4 +36,5 @@ const createFilters = (queryString: any) => {
         filters = {...filters, TEST_DATE: {...dateFilter}};
     }
     return filters;
+
 }
